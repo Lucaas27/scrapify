@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.3](https://github.com/Lucaas27/scrapify/compare/v1.1.2...v1.1.3) (2025-03-22)
+
+### Bug Fixes
+
+* update Docker image reference in production compose file ([beb5373](https://github.com/Lucaas27/scrapify/commit/beb53735e86df8f032a3ff66bb50cf9002bf1192))
+
 ## [1.1.2](https://github.com/Lucaas27/scrapify/compare/v1.1.1...v1.1.2) (2025-03-22)
 
 ### Bug Fixes
