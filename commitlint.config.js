@@ -22,6 +22,7 @@ export default {
         "refactor",
         "revert",
         "style",
+        "breaking",
       ],
     ],
     "header-max-length": [2, "always", 150],

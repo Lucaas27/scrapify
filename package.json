@@ -51,5 +51,8 @@
   },
   "imports": {
     "#src/*": "./src/*"
+  },
+  "overrides": {
+    "conventional-changelog-conventionalcommits": ">= 8.0.0"
   }
 }
