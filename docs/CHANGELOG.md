@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/Lucaas27/scrapify/compare/v1.2.3...v1.3.0) (2025-03-22)
+
+### Features
+
+* add CodeQL analysis to CI workflow with custom configuration ([a094c0a](https://github.com/Lucaas27/scrapify/commit/a094c0a4daef0bead0ab5ffeff7ed5f00aeed578))
+
 ## [1.2.3](https://github.com/Lucaas27/scrapify/compare/v1.2.2...v1.2.3) (2025-03-22)
 
 ### Bug Fixes
