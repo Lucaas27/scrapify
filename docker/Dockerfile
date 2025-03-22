@@ -12,7 +12,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-CMD ["npm", "run", "build"]
+RUN npm run build
 
 FROM nginx:stable-alpine AS production
 COPY --from=build /app/nginx /etc/nginx/conf.d
