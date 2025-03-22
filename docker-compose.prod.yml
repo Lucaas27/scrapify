@@ -3,6 +3,6 @@ services:
     container_name: scrapify
     image: ghcr.io/lucaas27/scrapify:latest
     build:
-      context: ../../
+      context: .
       target: production
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile

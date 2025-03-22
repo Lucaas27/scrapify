@@ -3,11 +3,11 @@ services:
     container_name: scrapify_dev
     image: scrapify_dev
     volumes:
-      - ../../:/app
+      - .:/app
       - /app/node_modules
     build:
-      context: ../../
+      context: .
       target: development
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - 4545:3000
