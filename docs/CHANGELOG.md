@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0](https://github.com/Lucaas27/scrapify/compare/v1.1.3...v1.2.0) (2025-03-22)
+
+### Features
+
+* add deployment step to Coolify in CI/CD workflow ([29eee43](https://github.com/Lucaas27/scrapify/commit/29eee4315d99bf27f34593720afc232de70186af))
+
 ## [1.1.3](https://github.com/Lucaas27/scrapify/compare/v1.1.2...v1.1.3) (2025-03-22)
 
 ### Bug Fixes
