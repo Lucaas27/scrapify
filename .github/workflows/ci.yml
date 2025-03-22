@@ -1,16 +1,16 @@
 name: CI
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 jobs:
-  quality-checks:
+  CI:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -25,14 +25,8 @@ jobs:
       - name: Run tests
         run: npm run test
 
-      - name: Run ESLint and fix
+      - name: Run ESLint
         run: npm run lint
 
       - name: Format with Prettier
-        run: npm run format
-
-      - name: Check for remaining ESLint errors
-        run: npm run lint
-
-      - name: Check for remaining formatting issues
         run: npm run format

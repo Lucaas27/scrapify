@@ -1,0 +1,13 @@
+services:
+  scrapify:
+    container_name: scrapify_dev
+    image: scrapify_dev
+    volumes:
+      - ../../:/app
+      - /app/node_modules
+    build:
+      context: ../../
+      target: development
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 4545:3000

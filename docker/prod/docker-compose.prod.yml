@@ -1,0 +1,10 @@
+services:
+  scrapify:
+    container_name: scrapify
+    image: scrapify_prod
+    build:
+      context: ../../
+      target: production
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 3000:80
