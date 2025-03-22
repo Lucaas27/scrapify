@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest"
 import { sum } from "#src/utils/sum.ts"
+import { describe, expect, it } from "vitest"
 describe("sum function", () => {
   it("adds two numbers correctly", () => {
     expect(sum(1, 2)).toEqual(3)
