@@ -1,3 +1,15 @@
+# Changelog
+
+## [1.1.0](https://github.com/Lucaas27/scrapify/compare/v1.0.0...v1.1.0) (2025-03-22)
+
+### Features
+
+* update CI/CD workflow to fetch full history for semantic release and enhance release output handling ([1087b3b](https://github.com/Lucaas27/scrapify/commit/1087b3b96e3530979698b471b12a898d1d450fa1))
+
+### Bug Fixes
+
+* update semantic release configuration and dependencies for improved versioning and changelog generation ([7fe6ead](https://github.com/Lucaas27/scrapify/commit/7fe6eadfb7dc27c3113195ccba193bda0ba1b57a))
+
 ## 1.0.0 (2025-03-22)
 
 * chore: move tests folder to root level ([9065b19](https://github.com/Lucaas27/scrapify/commit/9065b19))
