@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.2](https://github.com/Lucaas27/scrapify/compare/v1.1.1...v1.1.2) (2025-03-22)
+
+### Bug Fixes
+
+* change CMD to RUN for building the application in Dockerfile ([2c5045f](https://github.com/Lucaas27/scrapify/commit/2c5045ff093c6da9c237e4eaa00729e8642ed6a2))
+
 ## [1.1.1](https://github.com/Lucaas27/scrapify/compare/v1.1.0...v1.1.1) (2025-03-22)
 
 ### Bug Fixes
