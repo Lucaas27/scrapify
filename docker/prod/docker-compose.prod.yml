@@ -1,10 +1,8 @@
 services:
   scrapify:
     container_name: scrapify
-    image: scrapify_prod
+    image: ghcr.io/lucaas27/scrapify:latest
     build:
       context: ../../
       target: production
       dockerfile: ./docker/Dockerfile
-    ports:
-      - 3000:80
