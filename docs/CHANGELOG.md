@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.3](https://github.com/Lucaas27/scrapify/compare/v1.2.2...v1.2.3) (2025-03-22)
+
+### Bug Fixes
+
+* update Dockerfile path in CI/CD workflow for production deployment ([fae1af9](https://github.com/Lucaas27/scrapify/commit/fae1af9cbe38534ecd7b62c322344d975f6cf02a))
+
 ## [1.2.2](https://github.com/Lucaas27/scrapify/compare/v1.2.1...v1.2.2) (2025-03-22)
 
 ## [1.2.1](https://github.com/Lucaas27/scrapify/compare/v1.2.0...v1.2.1) (2025-03-22)
