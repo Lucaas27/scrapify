@@ -25,7 +25,7 @@ export abstract class BasePage implements IElementsVisibility {
     const tabPage = this.page.context().pages()[number]
 
     await tabPage?.bringToFront()
-    await tabPage?.reload({ waitUntil: "networkidle" })
+    await tabPage?.reload({ waitUntil: "domcontentloaded" })
   }
 
   async closeTab(number: number): Promise<void> {

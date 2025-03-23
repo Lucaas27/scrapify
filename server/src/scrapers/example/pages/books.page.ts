@@ -62,47 +62,45 @@ export class BooksPage extends BasePage {
 
     // Get all book items
     const bookLocators = await this.bookItems.getLocator().all()
+    console.log(`Found ${bookLocators.length} book locators`)
     const books: BookData[] = []
 
-    for (const bookLocator of bookLocators) {
-      // Skip empty rows or rows without proper content
-      const hasContent = (await bookLocator.locator(".rt-td").count()) > 0
-      if (!hasContent) continue
+    for (const [index, bookLocator] of bookLocators.entries()) {
+      console.log(`Processing book ${index + 1}/${bookLocators.length}`)
 
       try {
-        // Use the class properties with the bookLocator as context
-        const titleElement =
-          (await this.bookName
-            .getLocator()
-            .filter({ has: bookLocator })
-            .textContent()) || "Unknown Product"
+        // Skip empty rows or rows without proper content
+        const hasContent = (await bookLocator.locator(".rt-td").count()) > 0
+        if (!hasContent) {
+          console.log(`Skipping empty row ${index + 1}`)
+          continue
+        }
 
-        const authorElement =
-          (await this.bookAuthor
-            .getLocator()
-            .filter({ has: bookLocator })
-            .textContent()) || "Unknown"
+        // Extract data with proper context
+        const data = await Promise.all([
+          bookLocator
+            .locator(".rt-td a")
+            .first()
+            .textContent()
+            .then(text => text?.trim() || "Unknown Product"),
+          bookLocator
+            .locator(".rt-td:nth-child(3)")
+            .first()
+            .textContent()
+            .then(text => text?.trim() || "Unknown"),
+          bookLocator.locator(".rt-td img").first().getAttribute("src"),
+          bookLocator
+            .locator(".rt-td:nth-child(4)")
+            .first()
+            .textContent()
+            .then(text => text?.trim()),
+        ])
 
-        const imageUrl =
-          (await this.bookImage
-            .getLocator()
-            .filter({ has: bookLocator })
-            .getAttribute("src")) || undefined
-
-        const publisherElement =
-          (await this.bookPublisher
-            .getLocator()
-            .filter({ has: bookLocator })
-            .textContent()) || undefined
+        const [title, author, imageUrl, publisher] = data
 
         // Only add non-empty books (some rows might be empty in the table)
-        if (titleElement !== "Unknown Product" && titleElement.trim() !== "") {
-          books.push({
-            title: titleElement.trim(),
-            imageUrl,
-            author: authorElement?.trim(),
-            publisher: publisherElement?.trim(),
-          })
+        if (title !== "Unknown Product" && title !== "") {
+          books.push({ title, author, imageUrl, publisher })
         }
       } catch (error) {
         console.error("Error extracting book data:", error)
