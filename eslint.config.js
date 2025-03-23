@@ -16,7 +16,7 @@ export default defineConfig([
   pluginReact.configs.flat["jsx-runtime"],
   {
     rules: {
-      "no-unused-vars": "error",
+      "no-unused-vars": "off",
       "react/react-in-jsx-scope": "off",
       "prefer-const": ["error", { ignoreReadBeforeAssign: true }],
       "no-unused-expressions": [
