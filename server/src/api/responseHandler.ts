@@ -3,9 +3,9 @@ import { Response } from "express"
 
 export class ResponseHandler {
   static success<T>(res: Response, data: T, status: number = 200): void {
-    const response: ApiResponse<T[]> = {
+    const response: ApiResponse<T> = {
       success: true,
-      data: Array.isArray(data) ? data : [data],
+      data: data,
     }
     res.status(status).json(response)
   }

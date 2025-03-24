@@ -5,17 +5,16 @@ import { BaseElement } from "./base.element"
 export abstract class BasePage<T = unknown> implements IElementsVisibility {
   protected constructor(protected page: Page) {}
 
-  async goto(url: string): Promise<void> {
-    console.log(`Visiting ${url}`)
-    await this.page.goto(url, { waitUntil: "domcontentloaded" })
-  }
-
   async reloadPage(): Promise<void> {
     console.log("Reloading page")
     await this.page.reload({ waitUntil: "domcontentloaded" })
   }
 
   // Abstract method to be implemented by subclasses
+  async goto(url: string): Promise<void> {
+    console.log(`Visiting ${url}`)
+    await this.page.goto(url, { waitUntil: "domcontentloaded" })
+  }
   abstract getData(): Promise<T[]>
 
   async openNewTab(): Promise<Page> {

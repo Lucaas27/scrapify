@@ -1,8 +1,9 @@
 import { Scraper, ScraperOptions, ScraperResult } from "../types/scrapers.types"
+import { BooksToScrapeScraper } from "./books-to-scrape/books-to-scrape.scraper"
 import { DemoQABooksScraper } from "./example/books.scraper"
 
 // Register all scrapers here
-const scraperClasses = [DemoQABooksScraper]
+const scraperClasses = [DemoQABooksScraper, BooksToScrapeScraper]
 
 export class ScraperManager {
   private scrapers: Map<string, Scraper> = new Map()
