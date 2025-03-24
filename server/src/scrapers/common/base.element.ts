@@ -51,7 +51,6 @@ export abstract class BaseElement {
       // For multiple elements, check if at least one is visible
       if (!this.strict) {
         const count = await this.getLocator().count()
-        console.log(`Found ${count} elements for "${this.name}"`)
 
         if (count === 0) {
           throw new Error(`No elements found for "${this.name}"`)

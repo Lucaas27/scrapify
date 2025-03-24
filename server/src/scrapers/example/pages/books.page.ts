@@ -25,19 +25,20 @@ export class BooksPage extends BasePage {
     await this.elementsShouldBeVisible()
   }
 
-  async getBooks(): Promise<BookData[]> {
+  async getData(): Promise<BookData[]> {
     await this.elementsShouldBeVisible()
 
     const bookLocators = await this.bookItems.getLocator().all()
-    console.log(`Found ${bookLocators.length} book locators`)
+    if (bookLocators.length === 0) {
+      console.log("No books found on the page.")
+      return []
+    }
 
     const books: BookData[] = []
     let processedCount = 0
     let skippedCount = 0
 
     for (const [index, bookLocator] of bookLocators.entries()) {
-      console.log(`Processing book ${index + 1}/${bookLocators.length}`)
-
       try {
         // Basic row content check
         const cells = await bookLocator.locator(".rt-td").count()

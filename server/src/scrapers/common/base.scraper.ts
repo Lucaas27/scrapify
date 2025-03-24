@@ -7,6 +7,7 @@ import {
 
 export abstract class BaseScraper<T = unknown> implements Scraper<T> {
   abstract id: string
+  abstract source: string
   abstract name: string
   abstract description: string
 
@@ -68,7 +69,8 @@ export abstract class BaseScraper<T = unknown> implements Scraper<T> {
       )
 
       return {
-        source: this.id,
+        id: this.id,
+        source: this.source,
         items: items as T[],
         timestamp: new Date(Date.now()),
         metadata: {

@@ -17,7 +17,13 @@ const PORT = process.env.PORT || 3001
 // Get all available scrapers
 app.get("/api/scrapers", (_req, res) => {
   const scrapers = scraperManager.getScrapersInfo()
-  ResponseHandler.success(res, scrapers)
+  try {
+    ResponseHandler.success(res, scrapers)
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred"
+    return ResponseHandler.error(res, errorMessage, 500)
+  }
 })
 
 // Scrape with a specific scraper

@@ -11,6 +11,7 @@ export interface ScraperOptions {
 }
 
 export interface ScraperResult<T = unknown> {
+  id: string
   source: string
   items: T[]
   timestamp: Date
@@ -19,7 +20,6 @@ export interface ScraperResult<T = unknown> {
     totalItems?: number
     executionTimeMs?: number
   }
-  error?: ScraperError
 }
 
 export interface Scraper<T = unknown> {
@@ -27,11 +27,6 @@ export interface Scraper<T = unknown> {
   name: string
   description: string
   scrape(options: ScraperOptions): Promise<ScraperResult<T>>
-}
-
-export interface ScraperError {
-  message: string
-  details?: unknown
 }
 
 export interface IElementsVisibility {
