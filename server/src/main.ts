@@ -3,7 +3,7 @@ import "dotenv/config"
 import express from "express"
 import { chromium } from "playwright"
 import { ScraperManager } from "./scrapers"
-import { ResponseHandler } from "./utils/responseHandler"
+import { ResponseHandler } from "./api/responseHandler"
 
 const app = express()
 const scraperManager = new ScraperManager()
