@@ -1,7 +1,7 @@
 services:
   scrapify:
-    container_name: scrapify_dev
-    image: scrapify_dev
+    container_name: scrapify_client_dev
+    image: scrapify_client_dev
     volumes:
       - ./:/app:cached
       - /app/node_modules

@@ -1,7 +1,7 @@
 services:
   scrapify:
-    container_name: scrapify
-    image: ghcr.io/lucaas27/scrapify:latest
+    container_name: scrapify_client
+    image: ghcr.io/lucaas27/scrapify_client:latest
     build:
       context: .
       target: production
