@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/Lucaas27/scrapify_client/compare/v1.2.3...v1.3.0) (2025-03-27)
+
+### Features
+
+* add CodeQL analysis to CI workflow with custom configuration ([a094c0a](https://github.com/Lucaas27/scrapify_client/commit/a094c0a4daef0bead0ab5ffeff7ed5f00aeed578))
+
+### Bug Fixes
+
+* rename container and image for scrapify ([b764fce](https://github.com/Lucaas27/scrapify_client/commit/b764fced4078c4b9706c13df383a634ed2621782))
+
 ## [1.3.0](https://github.com/Lucaas27/scrapify/compare/v1.2.3...v1.3.0) (2025-03-22)
 
 ### Features
